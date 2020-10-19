@@ -13,7 +13,7 @@ Considering the needs, scheme structure preferred as star schema design.
 In this context, songplays, which is a table where song movements are kept, was created as a fact table. To provide detailed information to support this fact table, a user table, song table, artist table and time table were created as a dimension table.
 
 The scheme design is as follows:
-  ![deneme](Schema.PNG)
+  > ![deneme](Schema.PNG)
 
 
 ## ETL Pipeline
@@ -40,16 +40,18 @@ In these ETL processes, necessary column mappings and filtering are made and tra
 To get started with the project, you can find files at repository's dev branch. You can clone or download the project template files from the repository, if you'd like to develop your project locally.
 
 In addition to the data files, the project workspace includes six files:
-  * test.ipynb displays the first few rows of each table to let you check your database. You can use for Jupyter env.
-  * create_tables.py drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
-  * etl.ipynb reads and processes a single file from song_data and log_data and loads the data into your tables. This notebook contains detailed instructions on the ETL process for each of the tables. You can use for Jupyter env.
-  * etl.py reads and processes files from song_data and log_data and loads them into your tables. You can fill this out based on your work in the ETL notebook.
-  * sql_queries.py contains all your sql queries, and is imported into the last three files above.
-  * README.md provides discussion on your project.
+  * `test.ipynb` displays the first few rows of each table to let you check your database. You can use for Jupyter env.
+  * `create_tables.py` drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
+  * `etl.ipynb` reads and processes a single file from song_data and log_data and loads the data into your tables. This notebook contains detailed instructions on the ETL process for each of the tables. You can use for Jupyter env.
+  * `etl.py` reads and processes files from song_data and log_data and loads them into your tables. You can fill this out based on your work in the ETL notebook.
+  * `sql_queries.py` contains all your sql queries, and is imported into the last three files above.
+  * `README.md` provides discussion on your project.
+
 
 ## Requirements
 In order for the project to run smoothly, the libraries in requirements.txt must be installed with the following command.
   > pip install -r requirements.txt
+
 
 # Project Running
 * Firstly, you must run create tables:
@@ -59,6 +61,9 @@ In order for the project to run smoothly, the libraries in requirements.txt must
   > python etl.py
 
 After, all these steps, you complete first ETL process. If you want to continuosly or scheduled running this ETL process, you can use Cron Job or Airflow methods. 
+
+**NOTE: You will not be able to run test.ipynb, etl.ipynb, or etl.py until you have run create_tables.py at least once to create the sparkifydb database, which these other files connect to.**
+
 
 ### Cron Job:
 https://en.wikipedia.org/wiki/Cron
