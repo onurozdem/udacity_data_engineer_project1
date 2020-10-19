@@ -20,7 +20,7 @@ In this context, songplays, which is a table where song movements are kept, was 
 <br>
 The scheme design is as follows:
 <br>
-![deneme](https://r766469c826263xjupyterllyjhwqkl.udacity-student-workspaces.com/lab/tree/Schema.PNG)
+![deneme](https://github.com/onurozdem/udacity_data_engineer_project1/blob/dev/Schema.PNG)
 <br>
 <br>
 <br>
