@@ -20,7 +20,7 @@ In this context, songplays, which is a table where song movements are kept, was 
 <br>
 The scheme design is as follows:
 <br>
-![deneme](https://github.com/onurozdem/udacity_data_engineer_project1/blob/dev/Schema.PNG)
+  ![deneme](Schema.PNG)
 <br>
 <br>
 <br>
@@ -34,12 +34,12 @@ In this project, the data is located in the data folder in the main directory. T
 <br>
 As seen in the sample song data below; song data provides information for songs and artists tables. The flow process_song_file has been developed for this in the etl.py file.
 
-> {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
+  > {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
 
 <br>
 
 As seen in the sample user log data below; log data provides information for time, user and songplays tables. The flow process_log_file has been developed for this in the etl.py file. In addition, only NextPage log data are transferred to tables.
->{"artist":null,"auth":"Logged In","firstName":"Walter","gender":"M","itemInSession":0,"lastName":"Frye","length":null,"level":"free","location":"San Francisco-Oakland-Hayward, CA","method":"GET","page":"Home","registration":1540919166796.0,"sessionId":38,"song":null,"status":200,"ts":1541105830796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"}
+  >{"artist":null,"auth":"Logged In","firstName":"Walter","gender":"M","itemInSession":0,"lastName":"Frye","length":null,"level":"free","location":"San Francisco-Oakland-Hayward, CA","method":"GET","page":"Home","registration":1540919166796.0,"sessionId":38,"song":null,"status":200,"ts":1541105830796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"}
 
 <br>
 In these ETL processes, necessary column mappings and filtering are made and transfers to the table are provided. 
@@ -51,4 +51,4 @@ In these ETL processes, necessary column mappings and filtering are made and tra
 <h2>Requirements</h2>
 In order for the project to run smoothly, the libraries in requirements.txt must be installed with the following command.
 <br>
->`pip install -r requirements.txt`
+  pip install -r requirements.txt
