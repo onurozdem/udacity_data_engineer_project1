@@ -8,12 +8,12 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL, 
-                        start_time bigint, 
-                        user_id INT, 
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL NOT NULL, 
+                        start_time bigint NOT NULL, 
+                        user_id INT NOT NULL, 
                         level VARCHAR, 
-                        song_id VARCHAR, 
-                        artist_id VARCHAR, 
+                        song_id VARCHAR NOT NULL, 
+                        artist_id VARCHAR NOT NULL, 
                         session_id INT, 
                         location VARCHAR, 
                         user_agent VARCHAR, 
@@ -76,7 +76,7 @@ user_table_insert = ("""INSERT INTO users (user_id,
                    level)
         VALUES(%s, %s, %s, %s, %s)
         ON CONFLICT (user_id) 
-        DO NOTHING;
+        DO UPDATE SET level = excluded.level;
 """)
 
 song_table_insert = ("""INSERT INTO songs (song_id, 
