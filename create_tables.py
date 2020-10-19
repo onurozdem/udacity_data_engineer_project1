@@ -32,17 +32,24 @@ def drop_tables(cur, conn):
     Drops each table using the queries in `drop_table_queries` list.
     """
     for query in drop_table_queries:
-        cur.execute(query)
-        conn.commit()
-
+        try:
+            cur.execute(query)
+            conn.commit()
+        except psycopg2.Error as e:
+            print("Table Drop Error for {}!".format(query))
+            print(e)
 
 def create_tables(cur, conn):
     """
     Creates each table using the queries in `create_table_queries` list. 
     """
     for query in create_table_queries:
-        cur.execute(query)
-        conn.commit()
+        try:
+            cur.execute(query)
+            conn.commit()
+        except psycopg2.Error as e:
+            print("Table Create Error for {}!".format(query))
+            print(e)
 
 
 def main():
@@ -58,12 +65,19 @@ def main():
     
     - Finally, closes the connection. 
     """
-    cur, conn = create_database()
+    try:
+        cur, conn = create_database()
+    except Exception as e:
+        print(e)
+        raise e
     
-    drop_tables(cur, conn)
-    create_tables(cur, conn)
-
-    conn.close()
+    try:
+        drop_tables(cur, conn)
+        create_tables(cur, conn)
+    except Exception as e:
+        print(e)
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
