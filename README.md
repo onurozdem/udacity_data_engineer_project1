@@ -47,13 +47,11 @@ In addition to the data files, the project workspace includes six files:
   * `sql_queries.py` contains all your sql queries, and is imported into the last three files above.
   * `README.md` provides discussion on your project.
 
-
 ## Requirements
 In order for the project to run smoothly, the libraries in requirements.txt must be installed with the following command.
   > pip install -r requirements.txt
-
-
-# Project Running
+  
+## Project Running
 * Firstly, you must run create tables:
   > python create_tables.py
 
